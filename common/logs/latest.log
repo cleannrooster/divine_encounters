@@ -1,0 +1,6 @@
+[20:30:11] [main/INFO]: [STDOUT]: ok:   every referenced sound exists in the vanilla registry
+[20:30:11] [main/INFO]: [STDOUT]: ok:   every sound event has a translated subtitle
+[20:30:11] [main/INFO]: [STDOUT]: ok:   every event varies between at least two sources
+[20:30:11] [main/INFO]: [STDOUT]: ok:   every sounds.json event is registered in ModSounds
+[20:30:11] [main/INFO]: [STDOUT]: ok:   every registered sound has a sounds.json entry
+[20:30:11] [main/INFO]: [STDOUT]: ALL SOUND CHECKS PASSED

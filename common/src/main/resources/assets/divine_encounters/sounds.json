@@ -1,0 +1,327 @@
+{
+  "attack.swing_light": {
+    "subtitle": "subtitles.divine_encounters.attack.swing_light",
+    "sounds": [
+      {
+        "name": "minecraft:entity.player.attack.sweep",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:item.trident.riptide_1",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.swing_heavy": {
+    "subtitle": "subtitles.divine_encounters.attack.swing_heavy",
+    "sounds": [
+      {
+        "name": "minecraft:item.trident.riptide_2",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:item.trident.riptide_3",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.thrust": {
+    "subtitle": "subtitles.divine_encounters.attack.thrust",
+    "sounds": [
+      {
+        "name": "minecraft:item.trident.throw",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:item.trident.riptide_1",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.charge_rush": {
+    "subtitle": "subtitles.divine_encounters.attack.charge_rush",
+    "sounds": [
+      {
+        "name": "minecraft:entity.ender_dragon.flap",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:item.trident.riptide_3",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.windup_heavy": {
+    "subtitle": "subtitles.divine_encounters.attack.windup_heavy",
+    "sounds": [
+      {
+        "name": "minecraft:entity.evoker.prepare_attack",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.beacon.power_select",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.impact": {
+    "subtitle": "subtitles.divine_encounters.attack.impact",
+    "sounds": [
+      {
+        "name": "minecraft:entity.lightning_bolt.impact",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.anvil.land",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.impact_weight": {
+    "subtitle": "subtitles.divine_encounters.attack.impact_weight",
+    "sounds": [
+      {
+        "name": "minecraft:entity.wither.break_block",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.respawn_anchor.deplete",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.spite_swipe": {
+    "subtitle": "subtitles.divine_encounters.attack.spite_swipe",
+    "sounds": [
+      {
+        "name": "minecraft:entity.player.attack.sweep",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.phantom.swoop",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.spite_cleave": {
+    "subtitle": "subtitles.divine_encounters.attack.spite_cleave",
+    "sounds": [
+      {
+        "name": "minecraft:item.mace.smash_air",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.player.attack.strong",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.spite_pierce": {
+    "subtitle": "subtitles.divine_encounters.attack.spite_pierce",
+    "sounds": [
+      {
+        "name": "minecraft:entity.player.attack.crit",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:item.axe.scrape",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.spite_impact": {
+    "subtitle": "subtitles.divine_encounters.attack.spite_impact",
+    "sounds": [
+      {
+        "name": "minecraft:entity.warden.attack_impact",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.player.attack.strong",
+        "type": "event"
+      }
+    ]
+  },
+  "attack.spite_weight": {
+    "subtitle": "subtitles.divine_encounters.attack.spite_weight",
+    "sounds": [
+      {
+        "name": "minecraft:block.sculk_catalyst.bloom",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.respawn_anchor.deplete",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_war.idle": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_war.idle",
+    "sounds": [
+      {
+        "name": "minecraft:block.beacon.ambient",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.conduit.ambient",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_war.hurt": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_war.hurt",
+    "sounds": [
+      {
+        "name": "minecraft:entity.iron_golem.hurt",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.anvil.land",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_war.death": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_war.death",
+    "sounds": [
+      {
+        "name": "minecraft:entity.iron_golem.death",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.beacon.deactivate",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_war.wings": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_war.wings",
+    "sounds": [
+      {
+        "name": "minecraft:entity.phantom.flap",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.ender_dragon.flap",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_war.ascend": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_war.ascend",
+    "sounds": [
+      {
+        "name": "minecraft:block.beacon.activate",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.conduit.activate",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.scrape": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.scrape",
+    "sounds": [
+      {
+        "name": "minecraft:block.sculk_sensor.clicking",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.sculk.charge",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.reveal": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.reveal",
+    "sounds": [
+      {
+        "name": "minecraft:block.sculk_shrieker.shriek",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.warden.sonic_boom",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.dissolve": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.dissolve",
+    "sounds": [
+      {
+        "name": "minecraft:particle.soul_escape",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.beacon.deactivate",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.idle": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.idle",
+    "sounds": [
+      {
+        "name": "minecraft:particle.soul_escape",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.sculk_sensor.clicking",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.hurt": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.hurt",
+    "sounds": [
+      {
+        "name": "minecraft:block.amethyst_block.break",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.sculk.break",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.death": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.death",
+    "sounds": [
+      {
+        "name": "minecraft:entity.warden.death",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.sculk_catalyst.bloom",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.horn": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.horn",
+    "sounds": [
+      {
+        "name": "minecraft:entity.goat.prepare_ram",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:block.sculk.charge",
+        "type": "event"
+      }
+    ]
+  },
+  "entity.visage_of_malice.pounce": {
+    "subtitle": "subtitles.divine_encounters.entity.visage_of_malice.pounce",
+    "sounds": [
+      {
+        "name": "minecraft:entity.warden.attack_impact",
+        "type": "event"
+      },
+      {
+        "name": "minecraft:entity.hoglin.attack",
+        "type": "event"
+      }
+    ]
+  }
+}

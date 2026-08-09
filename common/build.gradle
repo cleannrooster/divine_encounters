@@ -1,0 +1,105 @@
+architectury {
+    common rootProject.enabled_platforms.split(',')
+}
+
+dependencies {
+    // Standard loom remaps mods: use modImplementation/modCompileOnly (not plain compileOnly).
+    // fabric-loader gives common the mixin + @Environment annotations; do not use other fabric-loader classes.
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+    // Architectury API (common variant) — registries, networking, client render/particle registration.
+    modApi "dev.architectury:architectury:$rootProject.architectury_api_version"
+
+    // GeckoLib — compile common code against the Fabric variant for API access.
+    modCompileOnly "software.bernie.geckolib:geckolib-fabric-${rootProject.minecraft_version}:${rootProject.geckolib_version}"
+}
+
+// Standalone check that the attack geometry still agrees with the numbers the moveset is authored
+// against: reach, arc span, lane width, and the tip-weighted particle distribution. Lives in the test
+// source set, so it never ships in the jar. Run with: ./gradlew :common:geometryCheck
+tasks.register('geometryCheck', JavaExec) {
+    description = 'Verifies directional-attack geometry and particle density curves.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.combat.GeometryCheck'
+}
+
+// Companion check for the encounter presence systems: observation hysteresis, the grace period,
+// and the fairness invariant that damage can only originate from a resolved position. A flickering
+// observation state or a stray attack from nowhere are both far cheaper to catch here than in game.
+tasks.register('presenceCheck', JavaExec) {
+    description = 'Verifies observation hysteresis, presence states, and candidate resolution.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.encounter.PresenceCheck'
+}
+
+// The structure planner: a batch split that drops blocks leaves permanent holes in an arena, and one
+// that duplicates them corrupts the captured-terrain map so restoration puts the world back wrong.
+// Both are invisible in game until far too late.
+tasks.register('manifestationCheck', JavaExec) {
+    description = 'Verifies structure-manifestation batch ordering and coverage.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.encounter.ManifestationCheck'
+}
+
+// Animation clips versus the bones the model code rotates afterwards. A bone that a clip forgets to
+// animate does not error — GeckoLib eases it back from its last value instead, so the offset the
+// model adds compounds every frame and the bone spins. Cheap to assert, miserable to diagnose.
+tasks.register('animationCheck', JavaExec) {
+    description = 'Verifies every clip animates the bones that setCustomAnimations rotates.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.client.AnimationCheck'
+}
+
+// The shrine's prayer scoring. The repetition tests are the point: if spamming one word ever
+// out-scores a written prayer, the feature silently degrades into a password prompt.
+tasks.register('prayerCheck', JavaExec) {
+    description = 'Verifies prayer normalisation, scoring, and exploit resistance.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.shrine.PrayerCheck'
+}
+
+// The Malice vegetation-phasing rules. The tag contents are the only thing standing between "a tree
+// is not cover" and "your log cabin is not cover", and they are plain data — very easy to widen by
+// accident. Also asserts trunk phasing is never granted to an attacking state.
+tasks.register('phasingCheck', JavaExec) {
+    description = 'Verifies Malice phase tags keep constructed wood solid, and the state gate.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.content.PhasingCheck'
+}
+
+// The advancement tree. Every way advancements break is silent: a mistyped translation key renders
+// the raw key, a mistyped entity id makes the advancement simply never fire, a mistyped parent
+// orphans a branch. All of them are string agreements between separate files.
+tasks.register('advancementCheck', JavaExec) {
+    description = 'Verifies advancement translation keys, entity ids, parents and the root grant.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.data.AdvancementCheck'
+}
+
+// Config coverage. A config key that looks right and does nothing is the failure here: an attack
+// added later whose .damage() call was not routed through DivineConfig simply cannot be tuned, and
+// nothing reports it. Compares what is registered against what the config exposes.
+tasks.register('configCheck', JavaExec) {
+    description = 'Verifies every attack and boss attribute is exposed to config.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.config.ConfigCheck'
+}
+
+// sounds.json. A misspelled vanilla id plays nothing, an entry with no ModSounds registration is
+// unreachable, and a registration with no entry is silent — none of the three raise an error.
+tasks.register('soundCheck', JavaExec) {
+    description = 'Verifies sound ids resolve, subtitles exist, and sounds.json matches ModSounds.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.cleannrooster.divineencounters.data.SoundCheck'
+}
+
+tasks.register('checkAll') {
+    description = 'Runs every standalone verification harness.'
+    dependsOn 'geometryCheck', 'presenceCheck', 'manifestationCheck', 'prayerCheck', 'animationCheck', 'phasingCheck', 'advancementCheck', 'configCheck', 'soundCheck'
+}
+
+// The harness is a main() rather than a JUnit suite (no test framework is pulled in for one file), so
+// Gradle 9 would otherwise fail `build` for finding test sources but no discoverable tests.
+tasks.named('test') {
+    failOnNoDiscoveredTests = false
+}

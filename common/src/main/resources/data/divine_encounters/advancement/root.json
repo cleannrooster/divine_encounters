@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": { "count": 1, "id": "minecraft:lodestone" },
+    "title": { "translate": "advancements.divine_encounters.root.title" },
+    "description": { "translate": "advancements.divine_encounters.root.description" },
+    "frame": "task",
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "granted": { "trigger": "minecraft:tick" }
+  },
+  "requirements": [["granted"]]
+}

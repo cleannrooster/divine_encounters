@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "Divine Bosses and Divine Encounters.",
+  "authors": [
+    "cleannrooster"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "icon": "assets/divine_encounters/icon.png",
+  "entrypoints": {
+    "main": [
+      "com.cleannrooster.divineencounters.fabric.DivineEncountersFabric"
+    ],
+    "client": [
+      "com.cleannrooster.divineencounters.fabric.DivineEncountersFabricClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=21",
+    "architectury": "*",
+    "fabric-api": "*",
+    "geckolib": ">=4.8"
+  }
+}

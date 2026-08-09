@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "divine_encounters:item/omen_of_malice"
+  }
+}

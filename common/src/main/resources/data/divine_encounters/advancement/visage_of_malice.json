@@ -1,0 +1,27 @@
+{
+  "parent": "divine_encounters:root",
+  "display": {
+    "icon": { "count": 1, "id": "divine_encounters:omen_of_malice" },
+    "title": { "translate": "advancements.divine_encounters.visage_of_malice.title" },
+    "description": { "translate": "advancements.divine_encounters.visage_of_malice.description" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "killed": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": { "type": "divine_encounters:visage_of_malice" }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [["killed"]]
+}
